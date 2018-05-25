@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
+
+body{
+	background:#2E9CE6;
+	color:#fff;
+	font-family : 'Raleway','Arial';
+	padding:3em;
+}
+ul {
+    list-style-type: none;
+    margin: 0 0 2em 0;
+    padding: 0;
+    
+}
+
+ul li {
+    display: inline;
+}
+
+ul li a {
+    font-size:1.5em;
+    padding:.5em;
+}
+a{
+	color:#fff;
+	text-decoration:none;
+}
+
+/* Change the link color on hover */
+ul li a:hover {
+    background-color: #2885C4;
+    color: #fff;
+    cursor:pointer;
+}
