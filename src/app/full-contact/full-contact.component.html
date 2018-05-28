@@ -1,0 +1,30 @@
+<div class="container color-dark">
+	<div>
+		<h1>Search Users</h1>
+		<span>This app uses FullContact API to search users from various social profiles like linkedIn, Twitter, Facebook etc.</span>
+		<form>
+			<input type="text" class="txt" name="search" placeholder="Search people by email address" value=""/>
+			<input type="submit" value="Search" class="btn btn-default" (click)="searchPeople();"/>
+		</form>
+		
+	</div>
+	  
+	<div class="item-list">
+	   <div><p>Your Search Results ({{itemCount}})</p></div>
+	   <div class="item" *ngFor="let fullcontact of fullContacts">
+	        <div class="col">
+	        	<div class="item-avatar">
+	        		<img class="avatar" src="{{ fullcontact.avatar }}" alt="{{ fullcontact.fullName }}"/>
+	        	</div>
+		   	</div>
+	        <div class="col">
+	        	<div class="item-data">
+				   	<p>Name : {{fullcontact.fullName}}</p>
+				   	<p>Age : {{fullcontact.ageRange}}</p>
+				   	<p>Gender : {{fullcontact.gender}}</p>
+				   	<p>Address : {{fullcontact.location}}</p>
+				</div>
+		   	</div>
+	   </div>
+	</div>
+</div>

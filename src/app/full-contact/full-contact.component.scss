@@ -1,0 +1,31 @@
+img.avatar{
+	height: 150px;
+    width: 150px;
+    border-radius: 100%;
+    padding: 2px;
+    border: 2px solid #fff;
+}
+.container{
+	padding: 0 1em;
+}
+.item{
+	border-bottom: 1px solid #ccc;
+    padding: 2em 1em;
+    background: #57B3F1;
+    display: grid;
+    grid-template-columns: 33% auto;
+}
+input.txt{
+	border: 0;
+    padding: 1em;
+    width: 30%;
+    margin: 2em 1em 1em 0;
+}
+input.btn{
+	border:0;
+	padding:1em 2em;
+	background:#A5F883;
+	color:#003A61;
+	margin-bottom:1em;
+	cursor:pointer;
+}
