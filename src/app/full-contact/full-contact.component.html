@@ -1,16 +1,16 @@
 <div class="container color-dark">
 	<div>
 		<h1>Search Users</h1>
-		<span>This app uses FullContact API to search users from various social profiles like linkedIn, Twitter, Facebook etc.</span>
+		<span>This app uses an API to search users from various social profiles like linkedIn, Twitter, Facebook etc. <br/>We do not store or publish your data anywhere, we are just getting it from the API and showing here temporarily.</span>
 		<form>
-			<input type="text" class="txt" name="search" placeholder="Search people by email address" value=""/>
+			<input type="text" class="txt" name="search" placeholder="Search people by email address" value="{{searchText}}" [(ngModel)]="searchText"/>
 			<input type="submit" value="Search" class="btn btn-default" (click)="searchPeople();"/>
 		</form>
 		
 	</div>
 	  
-	<div class="item-list">
-	   <div><p>Your Search Results ({{itemCount}})</p></div>
+	<div class="item-list" *ngIf="fullContacts.length > 0">
+	   <div><p>Your Search Results ({{fullContacts.length}})</p></div>
 	   <div class="item" *ngFor="let fullcontact of fullContacts">
 	        <div class="col">
 	        	<div class="item-avatar">

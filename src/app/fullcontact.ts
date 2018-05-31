@@ -1,6 +1,7 @@
 export interface IFullContact{
 	fullName:string,
-	gender:string,
+	gender  :string,
 	location:string,
-	ageRange:number
+	ageRange:string,
+	avatar  :string
 }

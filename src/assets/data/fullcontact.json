@@ -1,16 +1,7 @@
-[
-	{
-		"fullName": "Dharmvir Patel",
-		"ageRange": 30,
-		"gender": "Male",
-		"location": "Delhi, Nct, India",
-		"avatar":"https://www.dameca.com/Content/Images/profilepic.png"
-	},
-	{
-		"fullName": "Pankaj Priney",
-		"ageRange": 27,
-		"gender": "Male",
-		"location": "Delhi, Nct, India",
-		"avatar":"https://www.dameca.com/Content/Images/profilepic.png"
-	}
-]
+[{
+	"fullName": "John Doe",
+	"ageRange": 30,
+	"gender": "Male",
+	"location": "Delhi, Nct, India",
+	"avatar":"https://www.dameca.com/Content/Images/profilepic.png"
+}]

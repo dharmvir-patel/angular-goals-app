@@ -7,8 +7,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
-import { HttpClientModule} from '@angular/common/http';
+import { HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FullContactComponent } from './full-contact/full-contact.component';
+import { CommonService } from './common.service';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,14 @@ import { FullContactComponent } from './full-contact/full-contact.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [DataService],
+  providers: [
+    DataService,
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:CommonService,
+      multi:true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

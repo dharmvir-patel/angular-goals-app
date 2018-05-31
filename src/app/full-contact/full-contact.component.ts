@@ -10,17 +10,19 @@ export class FullContactComponent implements OnInit {
   
   public fullContacts = [];
   itemCount:number;
+  searchText:string;
 
   constructor(private _fullContact:FullContactService) { }
 
   ngOnInit() {
-  	this._fullContact.getFullContact()
-  	.subscribe( res => this.fullContacts=res );
-  	this.itemCount = this.fullContacts.length;
+  	
   }
 
   searchPeople(){
-  	console.log('Search From Submitted.');
+  	//console.log(this.searchText);
+    this._fullContact.getFullContact(this.searchText)
+    .subscribe( res => this.fullContacts=res );
+    this.itemCount = this.fullContacts.length;
   }
 
 }
