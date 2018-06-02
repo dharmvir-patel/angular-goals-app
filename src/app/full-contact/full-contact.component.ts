@@ -8,8 +8,8 @@ import { FullContactService } from './../full-contact.service';
 })
 export class FullContactComponent implements OnInit {
   
-  public fullContacts = [];
-  itemCount:number;
+  fullContacts:any;
+  itemCount:number=1;
   searchText:string;
 
   constructor(private _fullContact:FullContactService) { }
@@ -22,7 +22,6 @@ export class FullContactComponent implements OnInit {
   	//console.log(this.searchText);
     this._fullContact.getFullContact(this.searchText)
     .subscribe( res => this.fullContacts=res );
-    this.itemCount = this.fullContacts.length;
   }
 
 }

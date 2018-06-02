@@ -8,21 +8,20 @@
 		</form>
 		
 	</div>
-	  
-	<div class="item-list" *ngIf="fullContacts.length > 0">
-	   <div><p>Your Search Results ({{fullContacts.length}})</p></div>
-	   <div class="item" *ngFor="let fullcontact of fullContacts">
+	<div class="item-list" *ngIf="fullContacts">
+	   <div><p>Your Search Results ({{itemCount}})</p></div>
+	   <div class="item">
 	        <div class="col">
 	        	<div class="item-avatar">
-	        		<img class="avatar" src="{{ fullcontact.avatar }}" alt="{{ fullcontact.fullName }}"/>
+	        		<img class="avatar" src="{{ fullContacts.avatar }}" alt="{{ fullContacts.fullName }}"/>
 	        	</div>
 		   	</div>
 	        <div class="col">
 	        	<div class="item-data">
-				   	<p>Name : {{fullcontact.fullName}}</p>
-				   	<p>Age : {{fullcontact.ageRange}}</p>
-				   	<p>Gender : {{fullcontact.gender}}</p>
-				   	<p>Address : {{fullcontact.location}}</p>
+				   	<p>Name : {{fullContacts.fullName}}</p>
+				   	<p>Age Group : {{fullContacts.ageRange}}</p>
+				   	<p>Gender : {{fullContacts.gender}}</p>
+				   	<p>Address : {{fullContacts.location}}</p>
 				</div>
 		   	</div>
 	   </div>

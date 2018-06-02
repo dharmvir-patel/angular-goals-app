@@ -15,10 +15,10 @@ export class FullContactService {
 
   constructor(private http: HttpClient) { }
 
-  getFullContact(searchText):Observable<IFullContact[]>{
+  getFullContact(searchText):Observable<IFullContact>{
     //return your output here.
-  	//return this.http.post<IFullContact[]>(this._apiUrl,{email:searchText});
-  	return this.http.get<IFullContact[]>(this._url);
+  	return this.http.post<IFullContact>(this._apiUrl,{email:searchText});
+  	//return this.http.get<IFullContact[]>(this._url);
     
   }
 }
