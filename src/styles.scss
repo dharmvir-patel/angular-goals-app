@@ -8,6 +8,23 @@ body{
 	font-family : 'Raleway','Arial';
 	padding:1em 3em;
 }
+.container{
+    display:grid;
+    grid-template-columns : auto auto;
+    
+}
+.col {
+    padding:.4em 1.2em;
+}
+.color-dark{
+    background:#2885C4;
+    margin-top:1em;
+
+}
+.color-light{
+    background:#57B3F1; 
+}
+
 ul {
     list-style-type: none;
     margin: 0 0 2em 0;

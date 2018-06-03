@@ -1,29 +1,36 @@
 <div class="container color-dark">
-	<div>
-		<h1>Search Users</h1>
-		<span>This app uses an API to search users from various social profiles like linkedIn, Twitter, Facebook etc. <br/>We do not store or publish your data anywhere, we are just getting it from the API and showing here temporarily.</span>
+	<div class="col">
+		<p>Search Users</p>
+	</div>
+</div>
+<div class="container color-light">
+	<div class="col">
+		<p>This app uses an API to search users from various social profiles like linkedIn, Twitter, Facebook etc. <br/>We do not store or publish your data anywhere, we are just getting it from the API and showing here temporarily.</p>
 		<form>
 			<input type="text" class="txt" name="search" placeholder="Search people by email address" value="{{searchText}}" [(ngModel)]="searchText"/>
 			<input type="submit" value="Search" class="btn btn-default" (click)="searchPeople();"/>
 		</form>
 		
 	</div>
-	<div class="item-list" *ngIf="fullContacts">
-	   <div><p>Your Search Results ({{itemCount}})</p></div>
-	   <div class="item">
-	        <div class="col">
-	        	<div class="item-avatar">
-	        		<img class="avatar" src="{{ fullContacts.avatar }}" alt="{{ fullContacts.fullName }}"/>
-	        	</div>
-		   	</div>
-	        <div class="col">
-	        	<div class="item-data">
-				   	<p>Name : {{fullContacts.fullName}}</p>
-				   	<p>Age Group : {{fullContacts.ageRange}}</p>
-				   	<p>Gender : {{fullContacts.gender}}</p>
-				   	<p>Address : {{fullContacts.location}}</p>
-				</div>
-		   	</div>
-	   </div>
+</div>
+<div class="container color-dark" *ngIf="fullContacts">
+	<div class="col">
+	   <p>Your Search Results ({{itemCount}})</p>
 	</div>
 </div>
+<div class="container color-light" *ngIf="fullContacts">
+    <div class="col">
+    	<div class="item-avatar">
+    		<img class="avatar" src="{{ fullContacts.avatar }}" alt="{{ fullContacts.fullName }}"/>
+    	</div>
+   	</div>
+    <div class="col">
+    	<div class="item-data">
+		   	<p>Name : {{fullContacts.fullName}}</p>
+		   	<p>Age Group : {{fullContacts.ageRange}}</p>
+		   	<p>Gender : {{fullContacts.gender}}</p>
+		   	<p>Address : {{fullContacts.location}}</p>
+		</div>
+   	</div>
+</div>
+	
