@@ -1,8 +1,12 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<ul>
-  <li><a routerLink=''>Home</a></li>
-  <li><a routerLink='about/25'>About</a></li>
-  <li><a routerLink='members'>Members</a></li>
-</ul>
+<mat-toolbar color="primary">  
+  <mat-toolbar-row>
+    <span>Goals App</span>
+    <span class="example-spacer"></span>
+    <a routerLink='' mat-button>Home</a>
+    <a routerLink='about/1' mat-button>About</a>
+    <a routerLink='members' mat-button>Members</a>
+  </mat-toolbar-row>
+</mat-toolbar>
 
 <router-outlet></router-outlet>

@@ -10,6 +10,9 @@ import { AboutComponent } from './about/about.component';
 import { HttpClientModule,HTTP_INTERCEPTORS} from '@angular/common/http';
 import { FullContactComponent } from './full-contact/full-contact.component';
 import { CommonService } from './common.service';
+import { AppMaterialModule } from './app-material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -22,7 +25,9 @@ import { CommonService } from './common.service';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    AppMaterialModule,
+    BrowserAnimationsModule
   ],
   providers: [
     DataService,
