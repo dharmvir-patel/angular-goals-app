@@ -11,6 +11,7 @@ export class FullContactComponent implements OnInit {
   fullContacts:any;
   itemCount:number=1;
   searchText:string;
+  showSpinner:boolean = false;
 
   constructor(private _fullContact:FullContactService) { }
 
@@ -19,9 +20,15 @@ export class FullContactComponent implements OnInit {
   }
 
   searchPeople(){
-  	//console.log(this.searchText);
+    //show spinner
+    this.showSpinner = true;
+  	//get data from fullContact service ;
     this._fullContact.getFullContact(this.searchText)
     .subscribe( res => this.fullContacts=res );
+    //hide spinner
+    setTimeout(()=>{
+      this.showSpinner = false;
+    },2000)
   }
 
 }

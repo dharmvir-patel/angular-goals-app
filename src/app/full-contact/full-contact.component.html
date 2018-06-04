@@ -10,7 +10,7 @@
 			<input type="text" class="txt" name="search" placeholder="Search people by email address" value="{{searchText}}" [(ngModel)]="searchText"/>
 			<input type="submit" value="Search" class="btn btn-default" (click)="searchPeople();"/>
 		</form>
-		
+		<mat-progress-spinner [style.display]="showSpinner ? 'block' : 'none'" mode="indeterminate" [diameter]="25"></mat-progress-spinner>
 	</div>
 </div>
 <div class="container color-dark" *ngIf="fullContacts">
