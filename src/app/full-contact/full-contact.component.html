@@ -7,8 +7,13 @@
 	<div class="col">
 		<p>This app uses an API to search users from various social profiles like linkedIn, Twitter, Facebook etc. <br/>We do not store or publish your data anywhere, we are just getting it from the API and showing here temporarily.</p>
 		<form>
-			<input type="text" class="txt" name="search" placeholder="Search people by email address" value="{{searchText}}" [(ngModel)]="searchText"/>
-			<input type="submit" value="Search" class="btn btn-default" (click)="searchPeople();"/>
+		  <div class="form-container">
+		    <mat-form-field>
+			    <input matInput placeholder="Search people by email address" [formControl]="email" name="search" required value="{{searchText}}" [(ngModel)] = "searchText">
+			    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+			</mat-form-field>
+			<a mat-stroked-button (click)= "searchPeople();">Search</a>
+		  </div>
 		</form>
 		<mat-progress-spinner [style.display]="showSpinner ? 'block' : 'none'" mode="indeterminate" [diameter]="25"></mat-progress-spinner>
 	</div>

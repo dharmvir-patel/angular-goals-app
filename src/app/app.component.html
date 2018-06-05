@@ -1,18 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<mat-toolbar color="primary">  
-  <mat-toolbar-row>
-    <span>Goals App</span>
-    <span class="example-spacer"></span>
-    <a routerLink='' mat-button>Home</a>
-    <a routerLink='about/1' mat-button>About</a>
-    <a routerLink='members' mat-button>Members</a>
-  </mat-toolbar-row>
-</mat-toolbar>
+<div class="navbar">
+  <mat-toolbar color="primary">  
+    <mat-toolbar-row>
+      <a routerLink='' mat-button><mat-icon aria-hidden="true">local_florist</mat-icon><span> Goals App</span></a>
+      <span class="example-spacer"></span>
+      <a routerLink='' mat-button routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Home</a>
+      <a routerLink='about/1' mat-button routerLinkActive="active">About</a>
+      <a routerLink='members' mat-button routerLinkActive="active">Members</a>
+    </mat-toolbar-row>
+  </mat-toolbar>
+</div>
 
 <router-outlet></router-outlet>
 
-<div class="container color-dark">
+<div id="footer" class="color-dark">
 	<div class="col">
-		<p class="copyright-txt">Goals App &copy; Copyright {{date| date:'yyyy'}}</p>
+		<a mat-button>Goals App <mat-icon>copyright</mat-icon> {{date| date:'yyyy'}}</a>
 	</div>
 </div>
