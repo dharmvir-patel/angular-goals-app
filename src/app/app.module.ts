@@ -12,6 +12,7 @@ import { FullContactComponent } from './full-contact/full-contact.component';
 import { CommonService } from './common.service';
 import { AppMaterialModule } from './app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoginComponent } from './login/login.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     HomeComponent,
     AboutComponent,
-    FullContactComponent
+    FullContactComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

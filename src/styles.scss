@@ -11,7 +11,7 @@ body{
 }
 .container{
     display:grid;
-    grid-template-columns : auto auto;
+    grid-template-columns : 50% auto;
     margin:1em 1em 0 1em;
 }
 .col {
@@ -26,6 +26,9 @@ body{
     background:#57B3F1;
     box-shadow: 0px 5px #2885C4;
     margin-top:0; 
+}
+.color-light .col{
+    padding: 1.2em; 
 }
 .navbar a.active{
     color: greenyellow;

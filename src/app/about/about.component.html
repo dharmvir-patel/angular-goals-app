@@ -2,6 +2,9 @@
 	<div class="col">
 		<p>About</p>
 	</div>
+    <div class="col">
+		<p>Our Goals:</p>
+	</div>
 </div>
 <div class="container color-light">
 	<div class="col">
@@ -14,10 +17,8 @@
 		<p>
 		  This is all about us! <a color="primary" href="" (click)="sendMeHome()"><strong>Return to Home</strong></a>
 		</p>
-
-		<p>
-		  Our Goals:
-		</p>
+    </div>
+    <div class="col">
 		<ol>
 			<li *ngFor="let goal of goals">{{ goal }}</li>
 		</ol>
