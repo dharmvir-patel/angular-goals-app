@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { LoginService } from './../login.service';
+
 
 @Component({
   selector: 'app-login',
@@ -12,19 +15,29 @@ export class LoginComponent implements OnInit {
   isLogin:boolean=false;
   userName:string;
   userPassword:string;
+  userData:any;
 
-  constructor(private router:Router) { }
+  constructor(private router:Router,private loginService : LoginService) { }
 
   ngOnInit() {
   }
 
   OnSubmit(){
-  	if(this.userName=="demo" && this.userPassword=="demo"){
-  		//localStorage.setItem('userToken','');
-        //this.router.navigate(['/home']);
-        this.isLoginError = false;
-        this.isLogin = true;
-        //this.router.navigate(['/members']);
+    if(this.userName=="demo" && this.userPassword=="demo"){
+      this.loginService.loginUser(this.userName,this.userPassword)
+        .subscribe(res => {
+          this.userData = res;
+          //console.log(this.userData);
+          this.isLoginError = false;
+          this.isLogin = true;
+          //localStorage.setItem('userToken','');
+          //this.router.navigate(['/home']);
+         },
+         (err : HttpErrorResponse)=>{ 
+            this.isLogin = false;
+            this.isLoginError = true;
+         }
+        );
   	}
   	else{
   		this.isLogin = false;
