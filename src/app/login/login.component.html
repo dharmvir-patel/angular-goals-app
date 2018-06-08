@@ -1,11 +1,17 @@
 <mat-card class="login-form">
+    <div *ngIf="isLoginError" class="red-text center error-message">
+		<i class="material-icons">error</i> Incorrect username or password
+	</div>
     <form class="example-form">
-	  <mat-form-field class="example-full-width">
-	    <input matInput name="username" placeholder="Username or Email"type="text"/>
+	  <mat-form-field class="example-full-width">     
+	    <input matInput name="username" placeholder="Username or Email"type="text" [(ngModel)] = "userName" value="{{userName}}"/>
 	  </mat-form-field>
 	  <mat-form-field class="example-full-width">
-	    <input matInput name="password" placeholder="Password" type="password"/>
+	    <input matInput name="password" placeholder="Password" type="password" [(ngModel)] = "userPassword" value="{{userPassword}}"/>
 	  </mat-form-field>
-	  <button type="submit" mat-raised-button>Login</button>
+	  <button type="submit" mat-raised-button (click)="OnSubmit('','')">Login</button>
 	</form>
+	<div *ngIf="isLogin" class="green-text center success-message">
+		<span><i class="material-icons">account_box</i>Logged In Successfully.</span>
+	</div>
 </mat-card>
