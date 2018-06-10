@@ -2,6 +2,9 @@
 	<div class="col">
 		<p>Search Users</p>
 	</div>
+	<div class="col" *ngIf="fullContacts">
+		<p>Your Search Results ({{itemCount}})</p>
+	</div>
 </div>
 <div class="container color-light">
 	<div class="col">
@@ -17,27 +20,20 @@
 			</mat-card>
 		  </div>
 		</form>
-		<mat-progress-spinner [style.display]="showSpinner ? 'block' : 'none'" mode="indeterminate" [diameter]="25"></mat-progress-spinner>
+		
 	</div>
-</div>
-<div class="container color-dark" *ngIf="fullContacts">
 	<div class="col">
-	   <p>Your Search Results ({{itemCount}})</p>
-	</div>
-</div>
-<div class="container color-light" *ngIf="fullContacts">
-    <div class="col">
-    	<div class="item-avatar">
-    		<img class="avatar" src="{{ fullContacts.avatar }}" alt="{{ fullContacts.fullName }}"/>
-    	</div>
-   	</div>
-    <div class="col">
-    	<div class="item-data">
-		   	<p>Name : {{fullContacts.fullName}}</p>
-		   	<p>Age Group : {{fullContacts.ageRange}}</p>
-		   	<p>Gender : {{fullContacts.gender}}</p>
-		   	<p>Address : {{fullContacts.location}}</p>
+		<mat-progress-spinner [style.display]="showSpinner ? 'block' : 'none'" mode="indeterminate" [diameter]="50"></mat-progress-spinner>
+		<div class="items" *ngIf="fullContacts">
+	    	<div class="item-avatar">
+	    		<img class="avatar" src="{{ fullContacts.avatar }}" alt="{{ fullContacts.fullName }}"/>
+	    	</div>
+	    	<div class="item-data">
+			   	<p>Name : {{fullContacts.fullName}}</p>
+			   	<p>Age Group : {{fullContacts.ageRange}}</p>
+			   	<p>Gender : {{fullContacts.gender}}</p>
+			   	<p>Address : {{fullContacts.location}}</p>
+			</div>
 		</div>
    	</div>
 </div>
-	

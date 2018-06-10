@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FullContactService } from './../full-contact.service';
 import { FormControl, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-full-contact',
@@ -15,10 +16,16 @@ export class FullContactComponent implements OnInit {
   showSpinner:boolean = false;
   email = new FormControl('', [Validators.required, Validators.email]);
 
-  constructor(private _fullContact:FullContactService) { }
+  constructor(private _fullContact:FullContactService,private router:Router) { }
 
   ngOnInit() {
-  	
+  	if (localStorage.getItem('userToken')) {
+        // logged in so return true
+        return true;
+    }
+    // not logged in so redirect to login page with the return url
+    this.router.navigate(['/login']);
+    return false;
   }
 
   searchPeople(){

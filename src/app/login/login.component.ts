@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router,private loginService : LoginService) { }
 
   ngOnInit() {
+   
   }
 
   OnSubmit(){
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
           //console.log(this.userData);
           this.isLoginError = false;
           this.isLogin = true;
-          //localStorage.setItem('userToken','');
+          localStorage.setItem('userToken',res.accesstoken);
           //this.router.navigate(['/home']);
          },
          (err : HttpErrorResponse)=>{ 
@@ -43,7 +44,12 @@ export class LoginComponent implements OnInit {
   		this.isLogin = false;
   		this.isLoginError = true;
   	}
-  	
+  	console.log(localStorage.getItem('userToken'));
   }
+  logout(){
+    //unset localStoarge userToken
+    localStorage.removeItem('userToken');
+    this.isLogin = false;
+  }  
 
 }

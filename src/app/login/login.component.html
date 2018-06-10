@@ -10,7 +10,7 @@
 		  <mat-form-field class="example-full-width">
 		    <input matInput name="password" placeholder="Password" type="password" [(ngModel)] = "userPassword" value="{{userPassword}}"/>
 		  </mat-form-field>
-		  <button type="submit" mat-raised-button (click)="OnSubmit('','')">Login</button>
+		  <button type="submit" mat-raised-button (click)="OnSubmit()">Login</button>
 		</form>
 		<div *ngIf="isLogin" class="user-box">
 			<div class="green-text center success-message">
@@ -20,8 +20,9 @@
 				<p>Username : {{userData.username}}</p>
 				<p>Full Name : {{userData.firstname}} {{userData.lastname}}</p>
 				<p>Email : {{userData.email}}</p>
-				<p>Access Token  : {{userData.accesstoken}}</p>
-			</div>
+				<p>Access Token  : {{userData.accesstoken}}</p> 
+				<button mat-button (click)="logout()">Logout</button>
+			</div> 
 		</div>
 		
 	</mat-card>
