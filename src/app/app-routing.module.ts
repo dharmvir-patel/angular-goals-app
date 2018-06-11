@@ -4,13 +4,15 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { FullContactComponent } from './full-contact/full-contact.component';
 import { LoginComponent } from './login/login.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
 	{ path:'', component: HomeComponent },
 	{ path:'about/:id', component: AboutComponent},
 	{ path:'members', component: FullContactComponent},
-	{ path:'login', component: LoginComponent}
+	{ path:'login', component: LoginComponent},
+	{ path:'**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
