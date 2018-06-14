@@ -14,6 +14,7 @@ import { AppMaterialModule } from './app-material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { AuthGuard } from './auth.guard';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
       provide:HTTP_INTERCEPTORS,
       useClass:CommonService,
       multi:true
-    }
+    },
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

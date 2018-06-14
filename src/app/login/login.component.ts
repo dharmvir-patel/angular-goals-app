@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
   	console.log(localStorage.getItem('userToken'));
   }
   logout(){
+    this.loginService.setUserLoggedOut();
     //unset localStoarge userToken
     localStorage.removeItem('userToken');
     this.isLogin = false;
