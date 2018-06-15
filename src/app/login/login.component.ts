@@ -20,7 +20,11 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router,private loginService : LoginService) { }
 
   ngOnInit() {
-   
+    this.isLogin = this.loginService.getUserLoggedIn();
+    if(this.isLogin){
+      this.loginService.loginUser(this.userName,this.userPassword)
+        .subscribe(res => { this.userData = res });
+    }
   }
 
   OnSubmit(){
@@ -48,9 +52,9 @@ export class LoginComponent implements OnInit {
   }
   logout(){
     this.loginService.setUserLoggedOut();
+    this.isLogin = false;
     //unset localStoarge userToken
     localStorage.removeItem('userToken');
-    this.isLogin = false;
   }  
 
 }
