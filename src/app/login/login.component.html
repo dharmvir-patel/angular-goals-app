@@ -10,19 +10,41 @@
 		  <mat-form-field class="example-full-width">
 		    <input matInput name="password" placeholder="Password" type="password" [(ngModel)] = "userPassword" value="{{userPassword}}"/>
 		  </mat-form-field>
-		  <button type="submit" mat-raised-button (click)="OnSubmit()">Login</button>
+		  <button type="submit" color="primary" mat-raised-button (click)="OnSubmit()">Login</button>
 		</form>
 		<div *ngIf="isLogin" class="user-box">
-			<div class="green-text center success-message">
-				<span><i class="material-icons">account_box</i>Logged In Successfully.</span>
+			<div class="">
+				<div class="green-text text-center success-message">
+					<span><i class="material-icons">account_box</i></span>
+				</div>
 			</div>
-			<div class="user-info">
-				<p>Username : {{userData.username}}</p>
-				<p>Full Name : {{userData.firstname}} {{userData.lastname}}</p>
-				<p>Email : {{userData.email}}</p>
-				<p>Access Token  : {{userData.accesstoken}}</p> 
-				<button mat-button (click)="logout()">Logout</button>
-			</div> 
+			<div class="">
+				<div class="user-info" *ngIf="userData">
+					<table>
+						<tbody>
+							<tr>
+								<td>Username</td>
+								<td>{{userData.username}}</td>
+							</tr>
+							<tr>
+								<td>Full Name</td>
+								<td>{{userData.firstname}} {{userData.lastname}}</td>
+							</tr>
+							<tr>
+								<td>Email</td>
+								<td><a href="mailto:{{userData.email}}">{{userData.email}}</a></td>
+							</tr>
+							<tr>
+								<td>Access Token</td>
+								<td>{{userData.accesstoken}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div> 
+				<div>
+					<button color="warn" mat-raised-button (click)="logout()">Logout</button>
+				</div>
+            </div>
 		</div>
 		
 	</mat-card>

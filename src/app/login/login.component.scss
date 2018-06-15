@@ -10,8 +10,22 @@
 }
 .green-text{
 	color:rgb(65, 160, 32);
-	padding: 1em 0;
+}
+.green-text i{
+	font-size:100px;
 }
 .material-icons{
 	vertical-align:middle;
+}
+.user-info table{
+	width:100%;
+}
+.user-info table tr td{
+	padding:5px;
+	background:cadetblue;
+}
+.user-info table{
+	border: 1px solid #ddd;
+    padding: 5px;
+    margin-bottom:12px;
 }

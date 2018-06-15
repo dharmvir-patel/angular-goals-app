@@ -16,7 +16,7 @@
 			    <input matInput placeholder="Search people by email address" [formControl]="email" name="search" required value="{{searchText}}" [(ngModel)] = "searchText">
 			    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
 			</mat-form-field>
-			<a mat-stroked-button (click)= "searchPeople();">Search</a>
+			<a color="primary" mat-raised-button (click)= "searchPeople();">Search</a>
 			</mat-card>
 		  </div>
 		</form>

@@ -20,10 +20,9 @@ export class LoginComponent implements OnInit {
   constructor(private router:Router,private loginService : LoginService) { }
 
   ngOnInit() {
-    this.isLogin = this.loginService.getUserLoggedIn();
+    this.isLogin = this.loginService.isUserLoggedIn();
     if(this.isLogin){
-      this.loginService.loginUser(this.userName,this.userPassword)
-        .subscribe(res => { this.userData = res });
+      this.loginService.getLoggedInUserData().subscribe(res => this.userData = res );
     }
   }
 
@@ -48,13 +47,10 @@ export class LoginComponent implements OnInit {
   		this.isLogin = false;
   		this.isLoginError = true;
   	}
-  	console.log(localStorage.getItem('userToken'));
   }
   logout(){
     this.loginService.setUserLoggedOut();
     this.isLogin = false;
-    //unset localStoarge userToken
-    localStorage.removeItem('userToken');
   }  
 
 }

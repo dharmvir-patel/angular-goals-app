@@ -19,13 +19,18 @@ export class LoginService {
     //return this.http.post<IUsers>(this._url,{username:userName,password:userPassword});
   	return this.http.get<IUsers>(this._url);
   }
-  getUserLoggedIn(){
+  getLoggedInUserData(){
+    //get current loogedIn userdata.
+    return this.http.get<IUsers>(this._url);
+  }
+  isUserLoggedIn(){
     if (localStorage.getItem('userToken') ) {
       return true;
     }
     return false;
   }
   setUserLoggedOut(){
-
+    //unset token 
+    localStorage.removeItem('userToken')
   }
 }
