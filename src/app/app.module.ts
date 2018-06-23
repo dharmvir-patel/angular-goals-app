@@ -15,6 +15,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './auth.guard';
+import { ContactComponent } from './contact/contact.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { AuthGuard } from './auth.guard';
     AboutComponent,
     FullContactComponent,
     LoginComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,36 @@
+<div class="container">
+	<div class="contact-details">
+		
+	</div>
+    <mat-card class="contact-form">
+    	<h1>Contact Us</h1>
+	    <form class="example-form example-container">
+	        <mat-form-field class="example-full-width" appearance="outline">
+	        	<mat-label>Name</mat-label>
+	        	<input placeholder="Name" matInput type="text" class="form-control" id="name" required [formControl]="name">
+	        	<mat-error *ngIf="name.invalid">{{getNameErrorMessage()}}</mat-error>
+	        </mat-form-field>
+	   
+	        <mat-form-field class="example-full-width" appearance="outline">
+	        	<mat-label>Email</mat-label>
+	        	<input placeholder="Email" matInput type="email" class="form-control" id="email" name="email" required [formControl]="email">
+	        	<mat-error *ngIf="email.invalid">{{getEmailErrorMessage()}}</mat-error>
+	        </mat-form-field>
+	      
+	        <mat-form-field class="example-full-width" appearance="outline">
+	        	<mat-label>Phone</mat-label>
+	        	<input placeholder="Phone" matInput type="text" class="form-control" id="phone" name="phone" [formControl]="phone">
+	        </mat-form-field>
+
+	        <mat-form-field class="example-full-width" appearance="outline">
+	        	<mat-label>Message</mat-label>
+	        	<textarea placeholder="Message" matInput class="form-control" id="message" name="message" [formControl]="message"></textarea>
+	        </mat-form-field>
+	      
+	        <button color="primary" mat-raised-button class="btn btn-success" (click)= "contactUs();">Submit</button>
+
+	    </form>
+	    <div *ngIf="isSussess">Your message has been sent.</div>
+    </mat-card>
+
+</div>

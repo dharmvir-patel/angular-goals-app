@@ -6,7 +6,7 @@ import { FullContactComponent } from './full-contact/full-contact.component';
 import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './auth.guard';
-
+import { ContactComponent } from './contact/contact.component';
 
 
 const routes: Routes = [
@@ -14,7 +14,9 @@ const routes: Routes = [
 	{ path:'about/:id', component: AboutComponent},
 	{ path:'members', component: FullContactComponent,canActivate: [AuthGuard]},
 	{ path:'login', component: LoginComponent},
+	{ path:'contact-us', component: ContactComponent},
 	{ path:'**', component: PageNotFoundComponent}
+
 ];
 
 @NgModule({

@@ -16,11 +16,13 @@ export class LoginComponent implements OnInit {
   userName:string;
   userPassword:string;
   userData:any;
+  currentUrl : string;
 
   constructor(private router:Router,private loginService : LoginService) { }
 
   ngOnInit() {
     this.isLogin = this.loginService.isUserLoggedIn();
+    this.currentUrl = this.router.url;
     if(this.isLogin){
       this.loginService.getLoggedInUserData().subscribe(res => this.userData = res );
     }
