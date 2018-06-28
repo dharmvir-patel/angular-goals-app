@@ -4,6 +4,7 @@
 
 
 body{
+    background:#0073aa;
 	background:#2E9CE6;
 	color:#fff;
 	font-family : 'Raleway','Arial';
@@ -62,7 +63,8 @@ ul li a:hover {
 }
 /* Footer CSS*/
 #footer{
-    position:fixed;
+    background:#3f51b5;
+    /*position:fixed;*/
     bottom:0;
     width:100%;
 }

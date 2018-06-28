@@ -6,8 +6,8 @@
 	    <p></p>
 	</div>
 </div>
-<div class="container color-light" [@goals]="goals.length">
-	<div class="col">  
+<div class="container color-light">
+	<div class="col" [@goals]="goals.length">  
 		<form>
 			<input type="text" class="txt" name="item" value="" placeholder="My Goals.." [(ngModel)]="goalText"/>		
 			<input type="submit" class="btn" [value]="btnText" (click)="addItem()"/>
