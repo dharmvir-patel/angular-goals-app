@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
@@ -17,9 +17,26 @@ export class ContactComponent implements OnInit {
   message = new FormControl('');
   isSussess:boolean=false;
   _apiUrl:string = 'http://www.digitalcahoots.com/contactengine.php';
+
+  @ViewChild('gmap') gmapElement: any;
+  map: google.maps.Map;
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
+    var mapProp = {
+      center: new google.maps.LatLng(28.6415, 77.1209),
+      zoom: 11,
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+    };
+    this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+    var marker = new google.maps.Marker({ 
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        position: {lat:28.6415,lng:77.1209},
+        map: this.map,//set map created here
+        title:"Goals App"
+    });
+
   }
 
   getNameErrorMessage() {
