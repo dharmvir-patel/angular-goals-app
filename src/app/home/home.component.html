@@ -1,21 +1,116 @@
-<div class="container color-dark">
-	<div class="col">
-	    <p>Add a goal list item</p>
-	</div>
-	<div class="col">
-	    <p></p>
-	</div>
+<div id="demo" class="carousel slide" data-ride="carousel">
+
+  <!-- Indicators -->
+  <ul class="carousel-indicators">
+    <li data-target="#demo" data-slide-to="0" class="active"></li>
+    <li data-target="#demo" data-slide-to="1"></li>
+    <li data-target="#demo" data-slide-to="2"></li>
+  </ul>
+
+  <!-- The slideshow -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="assets/images/slide-1.jpg" alt="Los Angeles">
+      <div class="container-fluid">
+        <div class="carousel-caption text-left">
+          <h2>Want to make online presence </h2>
+          <p>We are here to help you, share your idea with us. We have experts in data science, cloud computing, web technology, mobility, web hosting and many more.</p>
+          <p><a class="btn btn-lg btn-primary" routerLink="contact-us" role="button">Contact Us</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/slide-2.jpg" alt="Chicago">
+      <div class="container-fluid">
+        <div class="carousel-caption text-left">
+          <h2>Looking for makeover.</h2>
+          <p>You landed just in right place, we are experienced and we can offer you best possible solution, so many happy clients are working with us. Want to know more then just click on below button and share your idea.</p>
+          <p><a class="btn btn-lg btn-primary" routerLink="contact-us" role="button">Contact Us</a></p>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item">
+      <img src="assets/images/slide-3.jpg" alt="New York">
+      <div class="container-fluid">
+        <div class="carousel-caption text-left">
+          <h2>Upgrade with latest technology.</h2>
+          <p>We can help you to run your business on latest technologies which are smooth and fast, it can improve customers interest in your business so you can expand your infrastructure and service.</p>
+          <p><a class="btn btn-lg btn-primary" routerLink="contact-us" role="button">Contact Us</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="carousel-control-prev" href="#demo" data-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </a>
+  <a class="carousel-control-next" href="#demo" data-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </a>
+
 </div>
-<div class="container color-light">
-	<div class="col" [@goals]="goals.length">  
-		<form>
-			<input type="text" class="txt" name="item" value="" placeholder="My Goals.." [(ngModel)]="goalText"/>		
-			<input type="submit" class="btn" [value]="btnText" (click)="addItem()"/>
-		</form>
-		<p><b>Our goal list ( {{ itemCount }} ) </b></p>
-		<p class="life-container" *ngFor="let goal of goals; let i=index" (click)="removeItem(i)">{{ goal }}</p>
+<div class="container-fluid">
+	<div class="col-md-12">
+		<div class="row">
+			<div class="col-md-9" style="padding-top: 10px;">	
+				<h3>Add a goal list item</h3>
+				<div [@goals]="goals.length">
+					<form>
+          <div class="input-group" style="margin-bottom: 25px">
+						<input type="text" class="form-control" name="item" value="" placeholder="My Goals.." [(ngModel)]="goalText"/>
+          </div>
+          <div class="form-group" style="margin-top: 10px">
+						<input type="submit" class="btn btn-primary" [value]="btnText" (click)="addItem()"/>
+          </div>
+					</form>
+					<p><b>Our goal list ( {{ itemCount }} ) </b></p>
+					<p class="life-container" *ngFor="let goal of goals; let i=index" (click)="removeItem(i)">{{ goal }}</p>
+				</div>
+			</div>
+			<div class="col-md-3">
+				<app-login></app-login>
+			</div>
+		</div>
 	</div>
-	<div class="col">
-		<app-login></app-login>
-	</div>
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-md-3">
+        <mat-card class="list-item">
+          <i class="material-icons">
+          gamepad
+          </i>
+          <h3>Just like playing</h3>
+          <p>Description</p>
+        </mat-card>
+      </div>
+      <div class="col-md-3">
+        <mat-card class="list-item">
+          <i class="material-icons">
+          laptop_mac
+          </i>
+          <h3>Go Live</h3>
+          <p>Description</p>
+        </mat-card>
+      </div>
+      <div class="col-md-3">
+        <mat-card class="list-item">
+          <i class="material-icons">
+          assistant
+          </i>
+          <h3>Share Ideas</h3>
+          <p>Description</p>
+        </mat-card>
+      </div>
+      <div class="col-md-3">
+        <mat-card class="list-item">
+          <i class="material-icons">
+          headset_mic
+          </i>
+          <h3>Get Connected</h3>
+          <p>Description</p>
+        </mat-card>
+      </div>
+    </div>
+  </div>
 </div>

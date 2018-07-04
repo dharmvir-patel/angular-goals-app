@@ -1,39 +1,32 @@
-<div class="container color-dark">
-	<div class="col">
-		<p>Search Users</p>
-	</div>
-	<div class="col" *ngIf="fullContacts">
-		<p>Your Search Results ({{itemCount}})</p>
-	</div>
-</div>
-<div class="container color-light">
-	<div class="col">
-		<p>This app uses an API to search users from various social profiles like linkedIn, Twitter, Facebook etc. We do not store or publish your data anywhere, we are just getting it from the API and showing here temporarily.</p>
-		<form>
-		  <div class="form-container">
-		    <mat-card>
-		    <mat-form-field>
-			    <input matInput placeholder="Search people by email address" [formControl]="email" name="search" required value="{{searchText}}" [(ngModel)] = "searchText">
-			    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-			</mat-form-field>
-			<a color="primary" mat-raised-button (click)= "searchPeople();">Search</a>
-			</mat-card>
-		  </div>
-		</form>
-		
-	</div>
-	<div class="col">
-		<mat-progress-spinner [style.display]="showSpinner ? 'block' : 'none'" mode="indeterminate" [diameter]="50"></mat-progress-spinner>
-		<div class="items" *ngIf="fullContacts">
-	    	<div class="item-avatar">
-	    		<img class="avatar" src="{{ fullContacts.avatar }}" alt="{{ fullContacts.fullName }}"/>
-	    	</div>
-	    	<div class="item-data">
-			   	<p>Name : {{fullContacts.fullName}}</p>
-			   	<p>Age Group : {{fullContacts.ageRange}}</p>
-			   	<p>Gender : {{fullContacts.gender}}</p>
-			   	<p>Address : {{fullContacts.location}}</p>
+<section class="py-5 py-md-6"></section>
+<div class="container-fluid">
+    <div class="row">
+    	<div class="col-md-12">
+    	    <h1>Search Members</h1>
+    	    <p>This app uses an API to search users from various social profiles like linkedIn, Twitter, Facebook etc. We do not store or publish your data anywhere, we are just getting it from the API and showing here temporarily.</p>
+			<form>
+			  <div class="form-container">
+			    <mat-card>
+			    <mat-form-field>
+				    <input matInput placeholder="Search people by email address" [formControl]="email" name="search" required value="{{searchText}}" [(ngModel)] = "searchText">
+				    <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+				</mat-form-field>
+				<a color="primary" mat-raised-button (click)= "searchPeople();">Search</a>
+				</mat-card>
+			  </div>
+			</form>
+			<mat-progress-spinner [style.display]="showSpinner ? 'block' : 'none'" mode="indeterminate" [diameter]="50"></mat-progress-spinner>
+			<div class="items" *ngIf="fullContacts">
+		    	<div class="item-avatar">
+		    		<img class="avatar" src="{{ fullContacts.avatar }}" alt="{{ fullContacts.fullName }}"/>
+		    	</div>
+		    	<div class="item-data">
+				   	<p>Name : {{fullContacts.fullName}}</p>
+				   	<p>Age Group : {{fullContacts.ageRange}}</p>
+				   	<p>Gender : {{fullContacts.gender}}</p>
+				   	<p>Address : {{fullContacts.location}}</p>
+				</div>
 			</div>
-		</div>
-   	</div>
+    	</div>
+    </div>
 </div>

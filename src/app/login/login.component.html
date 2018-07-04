@@ -1,51 +1,52 @@
-<mat-grid-list cols="2" rowHeight="10:1">
-	<mat-card class="login-form login">
-	    <div *ngIf="isLoginError" class="red-text center error-message">
-			<i class="material-icons">error</i> Incorrect username or password
-		</div>
-	    <form class="example-form" *ngIf="!isLogin">
-		  <mat-form-field class="example-full-width">     
-		    <input matInput name="username" placeholder="Username or Email"type="text" [(ngModel)] = "userName" value="{{userName}}"/>
-		  </mat-form-field>
-		  <mat-form-field class="example-full-width">
-		    <input matInput name="password" placeholder="Password" type="password" [(ngModel)] = "userPassword" value="{{userPassword}}"/>
-		  </mat-form-field>
-		  <button type="submit" color="primary" mat-raised-button (click)="OnSubmit()">Login</button>
-		</form>
-		<div *ngIf="isLogin" class="user-box">
-			<div class="">
-				<div class="green-text text-center success-message">
-					<span><i class="material-icons">account_box</i></span>
-				</div>
+<div class="login-form login">
+    <div *ngIf="isLoginError" class="red-text center error-message">
+		<i class="material-icons">error</i> Incorrect username or password
+	</div>
+    <form class="example-form" *ngIf="!isLogin">
+      <h3>Login</h3>
+      <div class="input-group" style="margin-bottom: 25px">   
+	    <input name="username" class="form-control" placeholder="Username or Email"type="text" [(ngModel)] = "userName" value="{{userName}}"/>
+	  </div>
+	  <div class="input-group" style="margin-bottom: 25px">
+	    <input name="password" class="form-control" placeholder="Password" type="password" [(ngModel)] = "userPassword" value="{{userPassword}}"/>
+	  </div>
+	  <div class="form-group" style="margin-top: 10px">
+	  	<button type="submit" color="primary" mat-raised-button (click)="OnSubmit()">Login</button>
+	  </div>
+	</form>
+	<div *ngIf="isLogin" class="user-box">
+		<div class="">
+			<div class="green-text success-message">
+				<span><i class="material-icons">perm_identity</i></span>
 			</div>
-			<div class="">
-				<div class="user-info" *ngIf="userData">
-					<table>
-						<tbody>
-							<tr>
-								<td>Username</td>
-								<td>{{userData.username}}</td>
-							</tr>
-							<tr>
-								<td>Full Name</td>
-								<td>{{userData.firstname}} {{userData.lastname}}</td>
-							</tr>
-							<tr>
-								<td>Email</td>
-								<td><a href="mailto:{{userData.email}}">{{userData.email}}</a></td>
-							</tr>
-							<tr>
-								<td>Access Token</td>
-								<td>{{userData.accesstoken}}</td>
-							</tr>
-						</tbody>
-					</table>
-				</div> 
-				<div>
-					<button color="warn" mat-raised-button (click)="logout()">Logout</button>
-				</div>
-            </div>
 		</div>
-		
-	</mat-card>
-</mat-grid-list>
+		<div class="">
+			<div class="user-info" *ngIf="userData">
+			    Welcome Back {{userData.firstname}} {{userData.lastname}}
+				<!--<table>
+					<tbody>
+						<tr>
+							<td>Username</td>
+							<td>{{userData.username}}</td>
+						</tr>
+						<tr>
+							<td>Full Name</td>
+							<td>{{userData.firstname}} {{userData.lastname}}</td>
+						</tr>
+						<tr>
+							<td>Email</td>
+							<td><a href="mailto:{{userData.email}}">{{userData.email}}</a></td>
+						</tr>
+						<tr>
+							<td>Access Token</td>
+							<td>{{userData.accesstoken}}</td>
+						</tr>
+					</tbody>
+				</table>-->
+			</div> 
+			<div>
+				<button color="warn" mat-raised-button (click)="logout()">Logout</button>
+			</div>
+        </div>
+	</div>
+</div>

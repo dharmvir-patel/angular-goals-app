@@ -1,24 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import url('https://fonts.googleapis.com/css?family=Raleway:300,700');
 
-
 body{
-    background:#0073aa;
+    /*background:#0073aa;
 	background:#2E9CE6;
-	color:#fff;
+	color:#fff;*/
 	font-family : 'Raleway','Arial';
     padding:0;
     margin:0;
 }
-.container{
-    display:grid;
-    grid-template-columns : 50% auto;
-    margin:1em 1em 0 1em;
-}
-.col {
-    padding:.4em 1.2em;
-}
+
 .color-dark{
     background:#2885C4;
     margin-top:1em;
@@ -26,8 +19,7 @@ body{
 }
 .color-light{
     background:#57B3F1;
-    box-shadow: 0px 5px #2885C4;
-    margin-top:0; 
+    box-shadow: 0px 0px 20px #000;
 }
 .color-light .col{
     padding: 1.2em; 
@@ -35,32 +27,7 @@ body{
 .navbar a.active{
     color: #27da7b;
 }
-ul {
-    list-style-type: none;
-    margin: 0 0 2em 0;
-    padding: 0;
-    
-}
 
-ul li {
-    display: inline;
-}
-
-ul li a {
-    font-size:1.5em;
-    padding:.5em;
-}
-a{
-	color:#fff;
-	text-decoration:none;
-}
-
-/* Change the link color on hover */
-ul li a:hover {
-    background-color: #2885C4;
-    color: #fff;
-    cursor:pointer;
-}
 /* Footer CSS*/
 #footer{
     background:#3f51b5;
