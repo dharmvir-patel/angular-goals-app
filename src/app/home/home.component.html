@@ -2,40 +2,18 @@
 
   <!-- Indicators -->
   <ul class="carousel-indicators">
-    <li data-target="#demo" data-slide-to="0" class="active"></li>
-    <li data-target="#demo" data-slide-to="1"></li>
-    <li data-target="#demo" data-slide-to="2"></li>
+    <li data-target="#demo" *ngFor="let hslide of sliderData; index as i; first as isFirst;" [class.active]="i == 0"></li>
   </ul>
 
   <!-- The slideshow -->
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="assets/images/slide-1.jpg" alt="Los Angeles">
+    <div class="carousel-item" *ngFor="let hslide of sliderData; index as i; first as isFirst;" [class.active]="i == 0">
+      <img src="{{hslide.image}}" alt="Los Angeles">
       <div class="container-fluid">
         <div class="carousel-caption text-left">
-          <h2>Want to make online presence </h2>
-          <p>We are here to help you, share your idea with us. We have experts in data science, cloud computing, web technology, mobility, web hosting and many more.</p>
-          <p><a class="btn btn-lg btn-primary" routerLink="contact-us" role="button">Contact Us</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="assets/images/slide-2.jpg" alt="Chicago">
-      <div class="container-fluid">
-        <div class="carousel-caption text-left">
-          <h2>Looking for makeover.</h2>
-          <p>You landed just in right place, we are experienced and we can offer you best possible solution, so many happy clients are working with us. Want to know more then just click on below button and share your idea.</p>
-          <p><a class="btn btn-lg btn-primary" routerLink="contact-us" role="button">Contact Us</a></p>
-        </div>
-      </div>
-    </div>
-    <div class="carousel-item">
-      <img src="assets/images/slide-3.jpg" alt="New York">
-      <div class="container-fluid">
-        <div class="carousel-caption text-left">
-          <h2>Upgrade with latest technology.</h2>
-          <p>We can help you to run your business on latest technologies which are smooth and fast, it can improve customers interest in your business so you can expand your infrastructure and service.</p>
-          <p><a class="btn btn-lg btn-primary" routerLink="contact-us" role="button">Contact Us</a></p>
+          <h2>{{hslide.captionTitle}}</h2>
+          <p>{{hslide.captionText}}</p>
+          <p><a class="btn btn-lg btn-primary" routerLink="{{hslide.captionButtonLink}}" role="button">{{hslide.captionButtonText}}</a></p>
         </div>
       </div>
     </div>

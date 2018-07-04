@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './../data.service';
-import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
+import { HomesliderService } from './../homeslider.service';
 
+import { trigger,style,transition,animate,keyframes,query,stagger } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
@@ -35,13 +36,19 @@ export class HomeComponent implements OnInit {
   btnText: string = 'Add an Item';
   goalText: string;
   goals = [];
-  constructor(private _data: DataService) { }
+  sliderData:any;
+
+  constructor(private _data: DataService,private _sliderData:HomesliderService) { }
 
   ngOnInit() {
   	
     this._data.goal.subscribe(res => this.goals = res);
     this.itemCount = this.goals.length;
     this._data.changeGoal(this.goals);
+
+    this._sliderData.getSliderData().subscribe(
+      res=>this.sliderData=res
+    );
   }
   addItem(){
   	this.goals.push(this.goalText);

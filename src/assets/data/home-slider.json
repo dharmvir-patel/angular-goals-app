@@ -1,0 +1,23 @@
+[
+	{
+		"image": "assets/images/slide-1.jpg",
+		"captionTitle": "Want to make online presence",
+		"captionText": "We are here to help you, share your idea with us. We have experts in data science, cloud computing, web technology, mobility, web hosting and many more.",
+		"captionButtonText": "Contact Us",
+		"captionButtonLink":"contact-us"
+	},
+	{
+		"image": "assets/images/slide-2.jpg",
+		"captionTitle": "Looking for makeover",
+		"captionText": "You landed just in right place, we are experienced and we can offer you best possible solution, so many happy clients are working with us. Want to know more then just click on below button and share your idea.",
+		"captionButtonText": "Contact Us",
+		"captionButtonLink":"contact-us"
+	},
+	{
+		"image": "assets/images/slide-3.jpg",
+		"captionTitle": "Upgrade with latest technology",
+		"captionText": "We can help you to run your business on latest technologies which are smooth and fast, it can improve customers interest in your business so you can expand your infrastructure and service.",
+		"captionButtonText": "Contact Us",
+		"captionButtonLink":"contact-us"
+	}
+]
