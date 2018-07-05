@@ -35,7 +35,14 @@ export class ContactComponent implements OnInit {
         position: {lat:28.6415,lng:77.1209},
         map: this.map,//set map created here
         title:"Goals App"
-    });
+    });/*
+    var marker2 = new google.maps.Marker({ 
+        draggable: true,
+        animation: google.maps.Animation.DROP,
+        position: {lat:28.6415,lng:77.1609},
+        map: this.map,//set map created here
+        title:"You are here"
+    });*/
 
   }
 
