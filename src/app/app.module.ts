@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './auth.guard';
 import { ContactComponent } from './contact/contact.component';
+import { SearchComponent } from './search/search.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ContactComponent } from './contact/contact.component';
     FullContactComponent,
     LoginComponent,
     PageNotFoundComponent,
-    ContactComponent
+    ContactComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

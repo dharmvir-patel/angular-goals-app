@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LoginService } from './login.service';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,8 @@ export class AppComponent {
   title = 'app';
   loginNavText:string;
   date = new Date();
-
-  constructor(private loginService : LoginService) { }
+  term:string;
+  constructor(private loginService : LoginService, private router:Router) { }
 
   ngOnInit() {
   	if(this.loginService.isUserLoggedIn()){
@@ -21,6 +22,9 @@ export class AppComponent {
   	else{
   		this.loginNavText = 'Login';
   	}
+  }
+  doSearch(){
+    this.router.navigate(['/search'],{queryParams:{term:this.term}});
   }
 
 }

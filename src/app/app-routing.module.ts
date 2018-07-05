@@ -7,6 +7,7 @@ import { LoginComponent } from './login/login.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { AuthGuard } from './auth.guard';
 import { ContactComponent } from './contact/contact.component';
+import { SearchComponent } from './search/search.component';
 
 
 const routes: Routes = [
@@ -15,6 +16,7 @@ const routes: Routes = [
 	{ path:'members', component: FullContactComponent,canActivate: [AuthGuard]},
 	{ path:'login', component: LoginComponent},
 	{ path:'contact-us', component: ContactComponent},
+	{ path:'search', component: SearchComponent},
 	{ path:'**', component: PageNotFoundComponent}
 
 ];
