@@ -18,11 +18,14 @@ export class ContactComponent implements OnInit {
   isSussess:boolean=false;
   _apiUrl:string = 'http://www.digitalcahoots.com/contactengine.php';
 
+  setPosition:string;
+
   @ViewChild('gmap') gmapElement: any;
   map: google.maps.Map;
   constructor(private http:HttpClient) { }
 
   ngOnInit() {
+    
     var mapProp = {
       center: new google.maps.LatLng(28.6415, 77.1209),
       zoom: 11,
@@ -32,18 +35,27 @@ export class ContactComponent implements OnInit {
     var marker = new google.maps.Marker({ 
         draggable: true,
         animation: google.maps.Animation.DROP,
-        position: {lat:28.6415,lng:77.1209},
+        position: {lat:28.6603,lng:77.1364},
         map: this.map,//set map created here
         title:"Goals App"
-    });/*
-    var marker2 = new google.maps.Marker({ 
-        draggable: true,
-        animation: google.maps.Animation.DROP,
-        position: {lat:28.6415,lng:77.1609},
-        map: this.map,//set map created here
-        title:"You are here"
-    });*/
+    });
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition((position) => {
+        console.log(position);
+        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
+        var marker2 = new google.maps.Marker({ 
+          draggable: true,
+          animation: google.maps.Animation.DROP,
+          position: {lat:position.coords.latitude,lng:position.coords.longitude},
+          map: this.map,//set map created here
+          title:"You are here",
+          icon: image
+        });
+      },(errorCallback)=>{console.log(errorCallback)},{timeout:10000});
 
+    } else {
+      console.log("Geolocation is not supported by this browser.");
+    }
   }
 
   getNameErrorMessage() {
