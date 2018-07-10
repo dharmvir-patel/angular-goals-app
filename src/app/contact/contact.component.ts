@@ -32,24 +32,24 @@ export class ContactComponent implements OnInit {
       mapTypeId: google.maps.MapTypeId.ROADMAP,
     };
     this.map = new google.maps.Map(this.gmapElement.nativeElement, mapProp);
+    /*var image = 'assets/images/map-icon.png';  */  
     var marker = new google.maps.Marker({ 
         draggable: true,
         animation: google.maps.Animation.DROP,
         position: {lat:28.6603,lng:77.1364},
         map: this.map,//set map created here
+        // icon: image,
         title:"Goals App"
     });
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         console.log(position);
-        var image = 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png';
         var marker2 = new google.maps.Marker({ 
           draggable: true,
           animation: google.maps.Animation.DROP,
           position: {lat:position.coords.latitude,lng:position.coords.longitude},
           map: this.map,//set map created here
-          title:"You are here",
-          icon: image
+          title:"You are here"
         });
       },(errorCallback)=>{console.log(errorCallback)},{timeout:10000});
 
